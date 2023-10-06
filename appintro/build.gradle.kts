@@ -19,6 +19,12 @@ android {
         consumerProguardFiles("consumer-proguard-rules.pro")
         vectorDrawables.useSupportLibrary = true
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
     publishing {
         singleVariant("release") {
             withSourcesJar()
@@ -53,6 +59,19 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.viewpager2)
     implementation(libs.androidx.fragment)
+
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.test)
+    implementation(libs.androidx.compose.ui.testManifest)
+    implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.toolingPreview)
+    implementation(libs.accompanist.pager)
+    implementation(libs.androidx.navigation.compose)
+
+    // Compose
 
     testImplementation(libs.junit)
     testImplementation(libs.mockito.core)

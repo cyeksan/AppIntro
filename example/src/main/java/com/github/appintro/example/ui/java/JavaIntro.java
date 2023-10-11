@@ -1,8 +1,10 @@
 package com.github.appintro.example.ui.java;
 
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 import com.github.appintro.AppIntro;
 import com.github.appintro.AppIntroFragment;
 import com.github.appintro.AppIntroPageTransformerType;

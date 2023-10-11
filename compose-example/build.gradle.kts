@@ -59,5 +59,5 @@ dependencies {
     implementation(libs.androidx.compose.ui.toolingPreview)
     implementation(libs.accompanist.pager)
     implementation(libs.androidx.navigation.compose)
-    implementation(project(":appintro"))
+    implementation(project(":appintro-compose"))
 }

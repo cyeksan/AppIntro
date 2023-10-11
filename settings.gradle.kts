@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 
 include(":appintro", ":example")
-include(":compose-example")
+include(":appintro-compose", ":compose-example")

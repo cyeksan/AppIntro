@@ -1,7 +1,6 @@
 package com.github.appintro.composeexample
 
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,36 +11,41 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.github.appintro.composeexample.ui.theme.UnselectedDot
-import com.github.appintro.compose.Properties
 import com.github.appintro.compose.AppIntroScreen
+import com.github.appintro.compose.Properties
+import com.github.appintro.composeexample.ui.theme.AppIntroBackgroundColor
+import com.github.appintro.composeexample.ui.theme.UnselectedDot
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        )
+        WindowCompat.getInsetsController(window, window.decorView).apply {
+            systemBarsBehavior =
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            hide(WindowInsetsCompat.Type.systemBars())
+        }
         super.onCreate(savedInstanceState)
         val imageIdList = listOf(
-            R.drawable.ic_android,
-            R.drawable.ic_cloud_circle,
-            R.drawable.ic_eternity,
+            R.drawable.ic_slide1,
+            R.drawable.ic_slide2,
+            R.drawable.ic_slide3,
         )
         val pageNum = 3
 
         val titleList = listOf(
-            "What is Lorem Ipsum?",
+            "Welcome!",
             "Where does it come from?",
             "Why do we use it?"
         )
 
         val descriptionList = listOf(
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "This is a demo of the AppIntro library, with a custom background on each slide!",
             "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
             "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         )
@@ -57,13 +61,13 @@ class MainActivity : ComponentActivity() {
             Color.White
         )
         val backgroundColorEndList = listOf(
-            Color.DarkGray,
+            AppIntroBackgroundColor,
             Color.Blue,
             Color.DarkGray
         )
 
         val backgroundColorStartList = listOf(
-            Color.Magenta,
+            AppIntroBackgroundColor,
             Color.Magenta,
             Color.Magenta
         )

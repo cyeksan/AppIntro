@@ -1,9 +1,9 @@
-package com.github.appintro.composeexample.ui.theme
+package com.github.appintro.compose.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
 val AppIntroStatusBarColor = Color(0x22000000)
-val AppIntroBackgroundColor = Color(0x22222222).copy(alpha = 0.88f)
+val AppIntroBackgroundColor = Color(0xFF222222).copy(alpha = 0.5f)
 val AppIntroTitleColor = Color(0xFFFFFFFF)
 val AppIntroDescColor = Color(0xFFFFFFFF)
 val AppIntroSeparatorColor = Color(0x22000000)
